@@ -65,7 +65,7 @@ sudo /opt/nvidia/jetson-io/jetson-io.py
 Select:
 
 ```
-12 GPIO Pins Enabled (Jetson Orin)
+9 GPIO Pins Enabled (Jetson Orin)
 ```
 <img width="548" height="603" alt="Screenshot from 2025-11-13 13-47-59" src="https://github.com/user-attachments/assets/647f060f-b7e0-4d00-87b3-b1bc43f28e39" />
 
