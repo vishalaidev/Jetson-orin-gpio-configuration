@@ -99,7 +99,7 @@ This script:
 
 ## 📌 Notes
 
-- Requires JetPack **6.0+**  
+- Requires JetPack **6.2.1**  
 - Must run all GPIO scripts with **sudo**  
 - Do not use these pins for SPI/I2S/UART while GPIO overlay is active  
 
