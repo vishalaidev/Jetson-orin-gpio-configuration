@@ -66,6 +66,10 @@ Select:
 ```
 12 GPIO Pins Enabled (Jetson Orin)
 ```
+<img width="548" height="603" alt="Screenshot from 2025-11-13 13-47-59" src="https://github.com/user-attachments/assets/647f060f-b7e0-4d00-87b3-b1bc43f28e39" />
+
+
+
 
 Save & reboot.
 
@@ -78,9 +82,6 @@ Run the provided Python script:
 ```bash(Device-tree work + GPIO validation)
 
 If this helped you, please ⭐ the repository!
-
-
-<img width="548" height="603" alt="Screenshot from 2025-11-13 13-47-59" src="https://github.com/user-attachments/assets/909f47bf-6733-4b8b-b582-27708c14e925" />
 
 
 
