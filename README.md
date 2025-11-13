@@ -45,14 +45,12 @@ These are fully controllable using **Jetson.GPIO** in Python.
 
 ### 1️⃣ Compile the DTS overlay
 
-```bash
-dtc -I dts -O dtb -o gpio_9pins.dtbo gpio_9pins.dts
-```
+
 
 ### 2️⃣ Copy overlay to the boot directory
 
 ```bash
-sudo cp gpio_9pins.dtbo /boot/
+sudo cp gpio_9pins_sucessfully_test.dts /boot/
 ```
 
 ### 3️⃣ Apply via Jetson-IO
