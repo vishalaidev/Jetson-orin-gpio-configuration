@@ -29,12 +29,12 @@ This overlay safely remaps them into **general-purpose digital GPIOs**.
 
 ---
 
-## 🔌 Enabled GPIO Pins (12 Total)
+## 🔌 Enabled GPIO Pins (9 Total)
 
 The following header pins are converted to GPIO:
 
 ```
-11, 12, 13, 16, 18, 22, 29, 32, 33, 35, 38, 40
+11 ,12, 13, 16, 18, 22, 29, 32, 33, 35, 38, 40
 ```
 
 These are fully controllable using **Jetson.GPIO** in Python.
