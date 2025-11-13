@@ -16,7 +16,7 @@ Users frequently experience issues such as:
 
 Because of this, even a simple task like blinking an LED becomes difficult unless the user manually edits the **device-tree pinmux**, which is time-consuming and error-prone.
 
-This repository solves that problem by providing a **tested, ready-to-use device-tree overlay** that correctly reconfigures **12 header pins** into reliable GPIOs.
+This repository solves that problem by providing a **tested, ready-to-use device-tree overlay** that correctly reconfigures **9 header pins** into reliable GPIOs.
 
 ---
 
