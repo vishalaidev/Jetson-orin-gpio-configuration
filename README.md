@@ -31,3 +31,9 @@ These 40-pin header pins are converted to GPIO:
 11, 12, 13, 16, 18, 22, 29, 32, 33, 35, 38, 40
 
 
+# Setup:
+dtc -O dtb -o gpio9.dts
+sudo cp  gpio9.dts /boot
+sudo /opt/nvidia/jetson-io/jetson-io.py
+
+
