@@ -28,5 +28,6 @@ This overlay reconfigures them to **general-purpose digital GPIOs**.
 ## ✅ Enabled GPIO Pins (12 Total)
 
 These 40-pin header pins are converted to GPIO:
+11, 12, 13, 16, 18, 22, 29, 32, 33, 35, 38, 40
 
 
