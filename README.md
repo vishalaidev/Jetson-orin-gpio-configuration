@@ -46,13 +46,13 @@ These are fully controllable using **Jetson.GPIO** in Python.
 ### 1️⃣ Compile the DTS overlay
 
 ```bash
-dtc -I dts -O dtb -o gpio_12pins.dtbo gpio_12pins.dts
+dtc -I dts -O dtb -o gpio_12pins.dtbo gpio_9pins.dts
 ```
 
 ### 2️⃣ Copy overlay to the boot directory
 
 ```bash
-sudo cp gpio_12pins.dtbo /boot/
+sudo cp gpio_9pins.dtbo /boot/
 ```
 
 ### 3️⃣ Apply via Jetson-IO
@@ -86,13 +86,13 @@ If this helped you, please ⭐ the repository!
 
 
 
-sudo python3 scripts/test_12_gpio.py
+sudo python3 scripts/test_9_gpio.py
 ```
 
 This script:
 
 - Toggles each pin one-by-one  
-- Blinks all 12 pins together  
+- Blinks all 9 pins together  
 - Verifies correct GPIO mode  
 
 ---
