@@ -22,7 +22,7 @@ This repository solves that problem by providing a **tested, ready-to-use device
 
 ## ✅ Solution: Jetson Orin Nano / Orin Super — 9 GPIO Pins Overlay
 
-This repository includes a **working DTS overlay** and **Python test script** to enable 12 GPIO pins on the NVIDIA Jetson Orin 40-pin header.
+This repository includes a **working DTS overlay** and **Python test script** to enable 9 GPIO pins on the NVIDIA Jetson Orin 40-pin header.
 
 Default JetPack (6.x) assigns many pins to other peripherals like SPI/I2S/UART.  
 This overlay safely remaps them into **general-purpose digital GPIOs**.
@@ -34,7 +34,8 @@ This overlay safely remaps them into **general-purpose digital GPIOs**.
 The following header pins are converted to GPIO:
 
 ```
-11 ,12, 13, 16, 18, 22, 29, 32, 33, 35, 38, 40
+12, 16, 18, 22, 32, 33, 35, 38, 40
+
 ```
 
 These are fully controllable using **Jetson.GPIO** in Python.
