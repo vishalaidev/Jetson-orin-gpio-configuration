@@ -46,7 +46,7 @@ These are fully controllable using **Jetson.GPIO** in Python.
 ### 1️⃣ Compile the DTS overlay
 
 ```bash
-dtc -I dts -O dtb -o gpio_12pins.dtbo gpio_9pins.dts
+dtc -I dts -O dtb -o gpio_9pins.dtbo gpio_9pins.dts
 ```
 
 ### 2️⃣ Copy overlay to the boot directory
@@ -75,7 +75,7 @@ Save & reboot.
 
 ---
 
-## 🧪 Testing All 12 GPIO Pins
+## 🧪 Testing All 9 GPIO Pins
 
 Run the provided Python script:
 
@@ -108,3 +108,4 @@ This script:
 ## 🧑‍💻 Author
 
 Created by **Vishal Maddeshiya**  
+contact : vishalaidev7426@gmail.com
