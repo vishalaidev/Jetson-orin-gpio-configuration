@@ -1,39 +1,109 @@
-# Jetson-orin-gpio-configuration
+# Jetson Orin GPIO Configuration
 
-# Problem :
-Most GPIO pins on the Jetson Orin 40-pin header do not work as GPIO out-of-the-box.
-Users frequently discover that:
-The pins cannot be toggled from Python or sysfs
-Jetson.GPIO raises errors like “pin not configured” or “resource busy”
-Pins stay stuck at 0V or remain floating
-jetson-io.py options do not expose all pins as GPIO
-Certain pins cause the board to hang or fail to boot after misconfiguration
-Many header pins are internally mapped to SPI, I2S, I2C, PWM, and UART, not GPIO
-The pinmux overlay system in JetPack 6.x is poorly documented
-Online, many developers report GPIO not working, DT overlay confusion, and ignored pin settings
-Because of this, a simple task like turning on an LED becomes extremely difficult unless the user edits the device-tree pinmux by hand — a process that is time-consuming and error-prone.
-This repository solves that problem by providing a tested, ready-to-use device-tree overlay that correctly reconfigures 12 header pins as clean, reliable GPIOs.
+## 🚨 Problem
 
+Most GPIO pins on the Jetson Orin 40-pin header **do not work as GPIO out-of-the-box**.  
+Users frequently experience issues such as:
 
-# Solution :
-# Jetson Orin Nano / Orin Super — 12 GPIO Pins Overlay
+- Pins cannot be toggled from Python or sysfs  
+- Jetson.GPIO shows errors like **“pin not configured”** or **“resource busy”**  
+- Pins stay stuck at 0V or remain floating  
+- `jetson-io.py` does not expose all pins as GPIO  
+- Incorrect pinmux settings can cause the board to **freeze or fail to boot**  
+- Many header pins are internally mapped to **SPI, I2S, I2C, PWM, UART**  
+- The JetPack 6.x pinmux overlay system is poorly documented  
+- Many developers online report **GPIO failure**, **overlay confusion**, and **ignored pin settings**
 
-This repository provides a **working device-tree overlay** and **test script** to enable **12 GPIO pins** on the NVIDIA Jetson Orin 40-pin header.
+Because of this, even a simple task like blinking an LED becomes difficult unless the user manually edits the **device-tree pinmux**, which is time-consuming and error-prone.
 
-Default JetPack (6.x) config maps many header pins to SPI/I2S/UART.  
-This overlay reconfigures them to **general-purpose digital GPIOs**.
+This repository solves that problem by providing a **tested, ready-to-use device-tree overlay** that correctly reconfigures **12 header pins** into reliable GPIOs.
 
 ---
 
-## ✅ Enabled GPIO Pins (12 Total)
+## ✅ Solution: Jetson Orin Nano / Orin Super — 12 GPIO Pins Overlay
 
-These 40-pin header pins are converted to GPIO:
+This repository includes a **working DTS overlay** and **Python test script** to enable 12 GPIO pins on the NVIDIA Jetson Orin 40-pin header.
+
+Default JetPack (6.x) assigns many pins to other peripherals like SPI/I2S/UART.  
+This overlay safely remaps them into **general-purpose digital GPIOs**.
+
+---
+
+## 🔌 Enabled GPIO Pins (12 Total)
+
+The following header pins are converted to GPIO:
+
+```
 11, 12, 13, 16, 18, 22, 29, 32, 33, 35, 38, 40
+```
 
+These are fully controllable using **Jetson.GPIO** in Python.
 
-# Setup:
-dtc -O dtb -o gpio9.dts
-sudo cp  gpio9.dts /boot
+---
+
+## 🛠️ Setup Instructions
+
+### 1️⃣ Compile the DTS overlay
+
+```bash
+dtc -I dts -O dtb -o gpio_12pins.dtbo gpio_12pins.dts
+```
+
+### 2️⃣ Copy overlay to the boot directory
+
+```bash
+sudo cp gpio_12pins.dtbo /boot/
+```
+
+### 3️⃣ Apply via Jetson-IO
+
+```bash
 sudo /opt/nvidia/jetson-io/jetson-io.py
+```
+
+Select:
+
+```
+12 GPIO Pins Enabled (Jetson Orin)
+```
+
+Save & reboot.
+
+---
+
+## 🧪 Testing All 12 GPIO Pins
+
+Run the provided Python script:
+
+```bash(Device-tree work + GPIO validation)
+
+If this helped you, please ⭐ the repository!
 
 
+<img width="548" height="603" alt="Screenshot from 2025-11-13 13-47-59" src="https://github.com/user-attachments/assets/909f47bf-6733-4b8b-b582-27708c14e925" />
+
+
+
+
+sudo python3 scripts/test_12_gpio.py
+```
+
+This script:
+
+- Toggles each pin one-by-one  
+- Blinks all 12 pins together  
+- Verifies correct GPIO mode  
+
+---
+
+## 📌 Notes
+
+- Requires JetPack **6.0+**  
+- Must run all GPIO scripts with **sudo**  
+- Do not use these pins for SPI/I2S/UART while GPIO overlay is active  
+
+---
+
+## 🧑‍💻 Author
+
+Created by **Vishal Maddeshiya**  
