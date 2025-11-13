@@ -20,7 +20,7 @@ This repository solves that problem by providing a **tested, ready-to-use device
 
 ---
 
-## ✅ Solution: Jetson Orin Nano / Orin Super — 12 GPIO Pins Overlay
+## ✅ Solution: Jetson Orin Nano / Orin Super — 9 GPIO Pins Overlay
 
 This repository includes a **working DTS overlay** and **Python test script** to enable 12 GPIO pins on the NVIDIA Jetson Orin 40-pin header.
 
